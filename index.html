@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Away!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="theme-toggle"></div>
+
+    <div id="main-menu">
+        <div id="menu-top-bar">
+            <span id="current-date"></span>
+        </div>
+        <header id="menu-header">
+            <div id="logo" aria-hidden="true"></div>
+            <div>
+                <h2 id="menu-title">Run Away!</h2>
+                <div style="font-size:0.6em;color:#666;margin-top:6px;-webkit-text-stroke:0px #000;">The chase is on — pick your mode
+                    <span class="watching-text">2beforgotten will always be watching...</span>
+                </div>
+            </div>
+        </header>
+        <nav id="menu-nav">
+            <button class="nav-btn active" data-target="play-view">Play</button>
+            <button class="nav-btn" data-target="profile-view">Profile</button>
+            <button class="nav-btn" data-target="settings-view">Settings</button>
+        </nav>
+        <main id="menu-content">
+            <div id="play-view" class="menu-view active">
+                <p id="greeting">Gamemodes:</p>
+                <div id="mode-buttons">
+                    <button id="classic-mode-btn" class="menu-btn">Classic</button>
+                    <button id="killer-mode-btn" class="menu-btn">Ball Killer</button>
+                    <button id="tag-mode-btn" class="menu-btn">Tag</button>
+                </div>
+            </div>
+            <div id="profile-view" class="menu-view">
+                <h3>Profile</h3>
+                <div class="profile-section">
+                    <h4>Customization</h4>
+                    <p>Change ball color:</p>
+                    <div class="color-picker-wrapper">
+                        <input type="color" id="ball-color-picker" value="#ff5722">
+                    </div>
+                </div>
+                 <div class="profile-section">
+                    <h4>Stats</h4>
+                    <p>Followers: 0</p>
+                    <p>Following: 0</p>
+                </div>
+            </div>
+            <div id="settings-view" class="menu-view">
+                <h3>Settings</h3>
+                <div class="setting-option">
+                    <label for="sfx-toggle">Sound Effects</label>
+                    <input type="checkbox" id="sfx-toggle" checked>
+                </div>
+                <div class="setting-option">
+                    <label for="christmas-toggle">Christmas Theme</label>
+                    <input type="checkbox" id="christmas-toggle">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <h1 class="hidden">Try to catch it!</h1>
+    <div id="character" class="hidden"></div>
+    <div id="countdown-timer" class="hidden"></div>
+    <div id="stopwatch" class="hidden">0.00</div>
+    <div id="success-message" class="hidden"></div>
+    <button id="go-again-button" class="hidden end-btn">Go Again</button>
+    <button id="main-menu-button" class="hidden end-btn">Main Menu</button>
+
+    <div id="cheat-menu" class="hidden">
+        <h2>Cheats</h2>
+        <div class="cheat-option">
+            <label for="autofollow-cheat">Auto-win (Classic):</label>
+            <input type="checkbox" id="autofollow-cheat">
+        </div>
+        <div class="cheat-option">
+            <button id="teleport-cheat-btn">Teleport Ball to Cursor</button>
+        </div>
+        <div class="cheat-option">
+            <label for="freeze-cheat">Freeze Ball:</label>
+            <input type="checkbox" id="freeze-cheat">
+        </div>
+        <button id="close-cheat-menu">Close</button>
+    </div>
+
+    <!-- Owner's Secret Admin Menu (hidden until code phrase typed) -->
+    <div id="owner-admin-menu" class="hidden" role="dialog" aria-hidden="true">
+        <h2>Owner's Secret Menu</h2>
+        <div class="admin-row">
+            <label for="admin-search">Search user:</label>
+            <input id="admin-search" placeholder="username" />
+            <button id="admin-search-btn">Search</button>
+        </div>
+        <div id="admin-search-result" class="admin-section"></div>
+
+        <div class="admin-section">
+            <h3>Moderation</h3>
+            <input id="admin-target" placeholder="target username" />
+            <button id="kick-btn">Kick</button>
+            <button id="ban-btn">Ban</button>
+        </div>
+
+        <div class="admin-section">
+            <h3>Cheats</h3>
+            <label><input type="checkbox" id="admin-auto-follow" /> Auto-follow (classic)</label>
+            <label><input type="checkbox" id="admin-freeze" /> Freeze ball</label>
+            <button id="admin-teleport">Teleport ball to cursor</button>
+        </div>
+
+        <div class="admin-actions">
+            <button id="close-owner-menu">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
